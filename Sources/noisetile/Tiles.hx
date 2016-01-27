@@ -65,7 +65,7 @@ class Tiles {
 				 
 				var d= Math.sqrt( xs + ys );
 				  
-				height-=(d/100)*d/2000 - 4*(10000 - xs+10000 - ys)/500000;
+				height-=((d+2*x+2*z)/100)*d/2000 - 4*(10000 - xs+10000 - ys)/500000;
 
 				heightMap[x-xx][z-zz]	= height*20+50;
 			}
