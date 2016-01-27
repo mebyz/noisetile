@@ -52,7 +52,7 @@ class Tiles {
 				level	*= 2;
 				height	+= (simplex.noise((x)/level, (z)/level)/2 + 0.5) * 1.8;
 				height	/= 1+0.5+0.25+0.125;
-				height *=1.4;
+				height *=1.6;
 
 				var xs = 0;
 				var ys = 0;
@@ -65,7 +65,7 @@ class Tiles {
 				 
 				var d= Math.sqrt( xs + ys );
 				  
-				height-=((d+2*x+2*z)/100)*d/2000 - 4*(10000 - xs+10000 - ys)/500000;
+				height-=((/*d+*/Math.cos((x-30)/40)/**100+2*z*/))+((/*d+*/Math.sin((z+40)/40)/**100+2*z*/))+6/*- 4*(10000 - xs+10000 - ys)/500000*/;
 
 				heightMap[x-xx][z-zz]	= height*20+50;
 			}
