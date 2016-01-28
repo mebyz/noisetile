@@ -50,24 +50,23 @@ class Tiles {
 				level	*= 2;
 				height	+= (simplex.noise((x)/level, (z)/level)/2 + 0.5) * 1;
 				level	*= 2;
+				height-=((/*d+*/Math.cos((x/2+50)/40)*2/**100+2*z*/))+((/*d+*/Math.sin((z/2+110)/40)*2/**100+2*z*/))+6/*- 4*(10000 - xs+10000 - ys)/500000*/;
 				height	+= (simplex.noise((x)/level, (z)/level)/2 + 0.5) * 1.8;
 				height	/= 1+0.5+0.25+0.125;
-				height *=1.6;
+				height *=3.6;
 
 				var xs = 0;
 				var ys = 0;
 				 
-				xs = x - 500;
+				/*xs = x - 500;
 				xs = xs * xs;
 				 
 				ys = z - 500;
 				ys = ys * ys;
-				 
+				 */
 				var d= Math.sqrt( xs + ys );
-				  
-				height-=((/*d+*/Math.cos((x-30)/40)/**100+2*z*/))+((/*d+*/Math.sin((z+40)/40)/**100+2*z*/))+6/*- 4*(10000 - xs+10000 - ys)/500000*/;
 
-				heightMap[x-xx][z-zz]	= height*20+50;
+				heightMap[x-xx][z-zz]	= height*200+50;
 			}
 		}
 		return heightMap;
