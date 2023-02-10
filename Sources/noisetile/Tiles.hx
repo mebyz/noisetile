@@ -83,6 +83,10 @@ class Tiles {
 		height	+= (simplex.noise((x)/level, (z)/level)/2 + 0.5) * 1.8;
 		height	/= 1+0.5+0.25+0.125;
 		height *=3.6;
+		if (x<50)
+			height -=50-x;		
+		if (z<50)
+			height -=50-z;
 		return height*500+1500;
 	}
 
