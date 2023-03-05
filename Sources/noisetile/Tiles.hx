@@ -87,7 +87,7 @@ class Tiles {
 		//	height -=50-x;		
 		//if (z<50)
 		//	height -=50-z;
-		return height*500+1500;
+		return height*500+2500;
 	}
 
 	public  function SHMap(heightMap: Dynamic, xx:Int, zz:Int){
@@ -99,7 +99,7 @@ class Tiles {
 
 				var height : Float	= getHeight(x, z);
 
-				heightMap[x-xx][z-zz] = height;
+				heightMap[x-xx][z-zz] = height > -100 ? height : -10000;
 			}
 		}
 		return heightMap;
